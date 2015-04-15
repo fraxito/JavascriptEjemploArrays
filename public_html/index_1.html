@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+
+
+        
+        
+        
+        function prueba(){           
+            document.write( 
+                    (function (){
+            var resultado = 0;
+            for(var i in arguments){
+                resultado = resultado + arguments[i];
+                
+            }
+            return(resultado);
+            
+        }) (8, 5, 12389, 123123, 1231 , 123, 123,123,123123 )
+                );
+        }
+        
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="submit" value="Pulsame" onclick="prueba();"/>
+        </div>
+    </body>
+</html>

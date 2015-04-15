@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+        var contador = 0;
+        
+            var familia = {
+                nombre : "Stark",
+                castillo: {
+                    nombre: "Invernalia",
+                    gobierno: {
+                        Lord: "Ned Stark",
+                        Lady: "Catelyn Stark"
+                    },
+                    lema: "Winter is Coming"
+                },
+                hijos: [
+                    {edad: 14, nombre:"Robb Stark"},
+                    {edad: 14, nombre:"Jon Snow"},
+                    {edad: 11, nombre:"Sansa Stark"},
+                    {edad: 9, nombre:"Arya Stark"},
+                    {edad: 7, nombre:"Bran Stark"},
+                    {edad: 3, nombre:"Rickon Stark"}
+                ],
+                fundador: function(){
+                    document.write ("Brandon el Constructor");
+                },
+                listado: function(){
+                    for (var i in this.hijos){
+                        document.write(this.hijos[i].nombre + " edad: " 
+                               + this.hijos[i].edad + "<br>");
+                    }
+                }
+            };
+        
+        
+        
+        var equipo = function (_nombre, _color, _estadio){
+            this.nombre = _nombre;
+            this.color = _color;
+            this.estadio = _estadio;
+            this.muestraInformacion = function (){
+                document.write(this.nombre + " " + this.estadio);
+            };
+        };
+        
+        var equipos = [];
+        
+        equipos[0] = new equipo("Numancia", "Rojo", "Los Pajaritos");
+        equipos[1] = new equipo("Athletic", "BlanquiRojo", "San Mamés");  
+        equipos[2]= new equipo();
+        equipos[2].nombre = "U.B.Conquense";
+        equipos[2].color = "BlanquiNegro";
+        equipos[2].estadio = "La Fuensanta";
+ 
+        
+        function izquierda(){
+            contador --;
+            document.getElementById("div_contador").innerHTML = contador;
+            document.getElementById("nombre_equipo").innerHTML = equipos[contador].nombre;
+            document.getElementById("color_equipo").innerHTML = equipos[contador].color;
+            document.getElementById("campo_equipo").innerHTML = equipos[contador].estadio;
+        }
+        function derecha(){
+            contador ++;
+            document.getElementById("div_contador").innerHTML = contador;
+            document.getElementById("nombre_equipo").innerHTML = equipos[contador].nombre;
+            document.getElementById("color_equipo").innerHTML = equipos[contador].color;
+            document.getElementById("campo_equipo").innerHTML = equipos[contador].estadio;
+        }
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="submit" value="-" onclick="izquierda();"/>
+            <input type="submit" value="+" onclick="derecha();"/>
+        </div>
+        <div id="div_contador"></div>
+        <div id="nombre_equipo"></div>
+        <div id="color_equipo"></div>
+        <div id="campo_equipo"></div>
+    </body>
+</html>

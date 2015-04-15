@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+        <script>
+            //var ejemploArray = [];
+            var ejemploArray = ["casa", "coche", "camion"];
+            
+            var ejemploArrayAsociativo = [];
+            ejemploArrayAsociativo["Stark"] = 6;
+            ejemploArrayAsociativo["Baratheon"] = 3;
+            ejemploArrayAsociativo["Lannister"] = 3;
+            ejemploArrayAsociativo["Targaryen"] = 2;
+            ejemploArrayAsociativo[0] = 44;
+            
+            function imprimeArray(){
+                for(var i in ejemploArray){
+                    document.write(ejemploArray[i] + "<br/>"); 
+                }
+            }
+            
+            function imprimeArrayAsociativo(){
+                //for(var i in ejemploArrayAsociativo){
+                //    document.write(ejemploArrayAsociativo[i] + "<br/>");
+                    
+                //}
+                document.write(ejemploArrayAsociativo[0]);
+            }
+            
+        </script>
+    </head>
+    <body>
+        <div>
+            <input type="submit" value="Pulsame" onclick="imprimeArray();"/>
+            <input type="submit" value="Pulsame" onclick="imprimeArrayAsociativo();"/>
+        </div>
+    </body>
+</html>
